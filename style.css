@@ -109,15 +109,19 @@ body{
     top: -5%;
     right: -5%;
 }
-.container1{
+.container-fluid{
     background-color: #efefef;
+    width: 100%;
     
 }
 .container{
     display: flex;
     justify-content: space-between;
     padding: 13px 5%;
+    gap: 10px;
     background-color: #efefef;
+    width: 100%;
+    /* border: 2px solid red; */
 }
 .left-side{
     position: sticky;
@@ -125,7 +129,7 @@ body{
     top: 70;
     align-self: flex-start;
     background-color: #efefef;
-    height: 100vh; /* Ensure the height takes up the full viewport */
+    height: 100vh; 
     overflow-y: auto;
 
     
@@ -133,20 +137,24 @@ body{
 }
 .right-side{    
     position: sticky;
-    flex-basis: 25%;
+    flex-basis: 40%;
     top: 70;
     align-self: flex-start;
+    margin-right: 0px;
     background: #fff;
     border-radius: 4px;
     color: #626262;
+    right: 2%;
     padding: 10px;
-    height: 100vh; /* Ensure the height takes up the full viewport */
+    height: 100vh;
+    width: 100%;
     overflow-y: auto; 
+    /* border: 2px solid; */
 
 }
 .main-content{
     flex-basis: 47%;
-    height: 100vh; /* Ensure the height takes up the full viewport */
+    height: 100vh; 
     overflow-y: auto;
 }
 .imp-links a, .shortcut-links a{
@@ -183,6 +191,7 @@ body{
     justify-content: space-between;
     margin-bottom: 18px;
     background: #fff;
+    width: 100%;
 }
 .sidebar-title h4{
     font-size: 16px;
@@ -315,6 +324,7 @@ body{
     width: 40%;
 }
 .write-post-container{
+    
     width: 100%;
     background: #fff;
     border-radius: 6px;
@@ -357,19 +367,26 @@ body{
     display: flex;
     margin-top: 10px;
     width: 100%;
+    justify-content: space-between;
+    align-items: center;
 
 }
 .add-post-links a{
     text-decoration: none;
     display: flex;
+    
     align-items: center;
     color: #626262;
-    margin-right: 25px;
-    font-size: 13px;
+    margin-right: 20%;
+    font-size: 80%;
 }
-.add-post-links a img{
-    width: 20px;
-    margin-right: 10px;
+
+.add-post-links div img{
+    margin-right: 5px;
+    width: 25%;
+}
+.add-post-links div{
+    width: 30%;
 }
 .post-container {
     width: 100%;
@@ -547,66 +564,63 @@ body{
  }
 
 
- @media screen and (max-width: 762px){
-    .left-side, .right-side{
-        display: none;
+.add-post-links{
+    flex-basis: 100%;
+}
+ .left-side, .right-side{
+    display: none;
+}
+.main-content{
+    flex-basis: 100%;
+}
+.nav_middle{
+    display: none;
+}
+.search-icon{
+    display: block;
+}
+.search{
+    display: none;
+}
+.story{
+    flex-basis: 30%;
+    padding-top: 53.33%;
+    position: relative;
+    background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(./images/circle-pf.jpeg);
+    background-position: center;
+    background-size: cover;
+    border-radius:10px ;
+}
+.story4{
+    display: none;
+    
+}
+.story5{
+    display: none;
+}
+.story2{
+    background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(./images/status-2.png);
+
+}    
+.story3{
+    background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(./images/status-3.png);
+
+}
+.add-post-links div span{
+    display: none;
+}
+
+@media screen and (min-width:768px) and (max-width:902px){
+    .container{
+        width: 100%;
+        padding: 10px;
     }
-    .main-content{
-        flex-basis: 100%;
-    }
-    .nav_middle{
-        display: none;
-    }
-    .search-icon{
-        display: block;
-    }
-    .search{
-        display: none;
-    }
-    .story{
+    .right-side{
         flex-basis: 30%;
-        padding-top: 53.33%;
-        position: relative;
-        background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(./images/circle-pf.jpeg);
-        background-position: center;
-        background-size: cover;
-        border-radius:10px ;
-    }
-    .story4{
-        display: none;
-        
-    }
-    .story5{
-        display: none;
-    }
-    .story2{
-        background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(./images/status-2.png);
-
-    }    
-    .story3{
-        background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(./images/status-3.png);
-
-    }
-    .un{
-        display: none;
-    }
- }
-
- @media screen and (min-width:762px) and (max-width:912px) {
-    .left-side{
-        display: none;
-    }
-    .nav_middle{
-        display: none;
+        display:block;
     }
     .main-content{
         flex-basis: 70%;
-    }
-    .right-side{
-        flex-basis: 27%;
-    }
-    .container{
-        padding: 0;
     }
     .story{
         flex-basis: 22.5%;
@@ -630,11 +644,86 @@ body{
     }
     .story4{
         background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(./images/status-4.png);
+        display: block;
 
     }
-    .un{
+    .search{
+        display: block;
+    }
+    .search-icon{
         display: none;
     }
     
-    
- }
+
+}
+@media screen and (min-width:902px) {
+    .right-side{
+        flex-basis: 25%;
+        display: block;
+        
+    }
+    .main-content{
+        flex-basis: 47%;
+    }
+    .left-side{
+        flex-basis: 25%;
+        display:block;
+    }
+    .nav_middle{
+        display: block;
+    }
+    .story{
+        flex-basis: 18%;
+        padding-top: 32%;
+        position: relative;
+        background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(./images/circle-pf.jpeg);
+        background-position: center;
+        background-size: cover;
+        border-radius:10px ;
+    }
+    .story img{
+        position: absolute;
+        width: 40%;
+        border-radius: 50%;
+        top: 10px;
+        left: 10px;
+        border: 5px solid #1876f2;
+    }
+    .story p{
+       position: absolute; 
+       bottom: 0%;
+       width: 100%;
+       text-align: center;
+       color: #fff;
+       font-size: 0.85rem;
+    }
+    .story1{
+        background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(./images/circle-pf.jpeg); 
+    }
+    .story2{
+        background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(./images/status-2.png); 
+    }
+    .story3{
+        background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(./images/status-3.png); 
+    }
+    .story4{
+        background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(./images/status-4.png);
+        display: block; 
+    }
+    .story5{
+        background-image: linear-gradient(transparent,rgba(0,0,0,0.5)), url(./images/status-5.png); 
+        display: block;
+    }
+    .search{
+        display: block;
+    }
+    .search-icon{
+        display: none;
+    }
+    .nav_bar{
+        align-items: center;
+    }
+}
+
+
+ 
